@@ -69,7 +69,7 @@ def create_optimized_slideshow(photos):
         slideshow = extract_slideshow_from_gurobi(x, photos, S)
         return slideshow, model.ObjVal
     else:
-        print("⚠ Gurobi n'a pas trouvé de solution optimale.")
+        print(" Gurobi n'a pas trouvé de solution optimale.")
         return [], 0
  
 def extract_slideshow_from_gurobi(x, photos, S):
@@ -120,7 +120,7 @@ def main():
         final_score = analyze_transitions(slideshow_order, photos_dict)
         print(f"✅ Score final atteint : {final_score}")
         write_output("slideshow.sol", slideshow_order)
-        print("✅ Solution finale enregistrée.")
+        print("✅ Solution finale enregistrée. Veuillez changer d'instance pour voir les résultats du modèle")
     else:
         print("⚠ Aucune solution n'a été trouvée.")
  
